@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { get } from '@renderer/utils/axios' // 导入 get 函数
+import { get } from '../utils/axios' // 导入 get 函数
 
 // 假设你的 API 返回的数据类型
 interface UserData {

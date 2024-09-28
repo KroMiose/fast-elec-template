@@ -16,12 +16,6 @@ export default defineConfig({
         '@renderer': resolve('src/renderer/src')
       }
     },
-    plugins: [vue(), UnoCSS()],
-    server: {
-      hmr: {
-        // 启用热更新
-        port: 5173 // Vite dev server 端口
-      }
-    }
+    plugins: [vue(), UnoCSS()]
   }
 })
