@@ -1,4 +1,3 @@
-import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, RedirectResponse
@@ -51,6 +50,8 @@ app.add_event_handler("shutdown", shutdown_event)
 
 
 def start():
+    import uvicorn
+
     uvicorn.run(
         "src.fastapi_bed.app:app",
         host=config.APP_HOST,
