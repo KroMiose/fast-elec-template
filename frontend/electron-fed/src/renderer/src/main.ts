@@ -2,10 +2,14 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from '../router/index' // 导入路由
+import router from './router/' // 导入路由
 
 import 'virtual:uno.css'
 
 const app = createApp(App)
-app.use(router) // 使用路由
-app.mount('#app')
+// 配置路由
+app.use(router)
+
+app.mount('#app').$nextTick(() => {
+  postMessage({ payload: 'removeLoading' }, '*')
+})
