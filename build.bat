@@ -1,7 +1,7 @@
 @echo off
 
 @REM 构建前端项目
-cd electron-app
+cd electron-fed
 call npm install
 call npm run build:win
 cd ..
@@ -15,7 +15,7 @@ cd ..
 rd /s /q dist
 
 @REM 移动目标文件
-move electron-app\dist dist
-copy electron-app\start_bed.bat dist\start_bed.bat
+move electron-fed\dist dist
+copy electron-fed\start_bed.bat dist\start_bed.bat
 mkdir dist\server
 copy backend dist\server
