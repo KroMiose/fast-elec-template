@@ -1,5 +1,5 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
-import { join } from 'path'
+import path, { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { spawn } from 'child_process'
@@ -61,7 +61,9 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 
-  const fastapi = spawn('..\\backend\\start.bat')
+  const fastapi = spawn(path.join(__dirname, 'start_bed.bat'), {
+    shell: true // 添加这个选项以在 shell 中运行
+  })
 
   // 监听后端输出
   fastapi.stdout.on('data', (data) => {
