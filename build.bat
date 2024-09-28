@@ -18,4 +18,4 @@ rd /s /q dist
 move electron-fed\dist dist
 copy electron-fed\start_bed.bat dist\start_bed.bat
 mkdir dist\server
-copy backend dist\server
+xcopy backend\* dist\server\ /E /I /Y
