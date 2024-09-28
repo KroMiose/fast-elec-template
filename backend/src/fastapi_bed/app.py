@@ -59,7 +59,3 @@ def start():
         log_level=config.UVICORN_LOG_LEVEL.lower(),
         reload=config.APP_RELOAD or Args.RELOAD,
     )
-
-
-if __name__ == "__main__":
-    start()

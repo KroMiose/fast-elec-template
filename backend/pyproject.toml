@@ -17,7 +17,7 @@ license = { text = "MIT" }
 
 [tool.pdm.scripts]
 app = { cmd = "python -m src.fastapi_bed.app" }
-buildexe = { cmd = "pyinstaller --onefile --clean --distpath dist/exe src/fastapi_bed/app.py" }
+buildexe = { cmd = "pyinstaller --onefile --clean --distpath dist/exe src/main.py" }
 
 
 [tool.pdm]
