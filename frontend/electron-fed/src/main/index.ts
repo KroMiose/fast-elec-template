@@ -63,6 +63,15 @@ app.whenReady().then(() => {
 
   const fastapi = spawn('..\\backend\\start.bat')
 
+  // 监听后端输出
+  fastapi.stdout.on('data', (data) => {
+    console.log(`FastAPI: ${data}`)
+  })
+
+  fastapi.stderr.on('data', (data) => {
+    console.error(`FastAPI: ${data}`)
+  })
+
   app.on('window-all-closed', () => {
     fastapi.kill()
     app.quit()
