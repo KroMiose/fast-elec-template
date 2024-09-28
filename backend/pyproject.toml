@@ -1,0 +1,73 @@
+[project]
+name = "fastapi-bed"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [{ name = "KroMiose", email = "li_xiangff@163.com" }]
+dependencies = [
+    "tortoise-orm>=0.21.6",
+    "fastapi>=0.115.0",
+    "loguru>=0.7.2",
+    "uvicorn>=0.31.0",
+    "pyinstaller>=6.10.0",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = { text = "MIT" }
+
+
+[tool.pdm.scripts]
+app = { cmd = "python -m src.fastapi_bed.app" }
+buildexe = { cmd = "pyinstaller --onefile --clean --distpath dist/exe src/fastapi_bed/app.py" }
+
+
+[tool.pdm]
+distribution = true
+
+[tool.black]
+line-length = 128
+
+[tool.ruff]
+extend-exclude = []
+ignore = [
+    "E402",
+    "E501",
+    "E722",
+    "B008",
+    "B905",
+    "F401",
+    "TID252",
+    "TRY002",
+    "TRY003",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "RUF006",
+    "RUF012",
+    "RUF100",
+    "PGH003",
+    "N801",
+    "A003",
+]
+select = [
+    "F",
+    "E",
+    "I",
+    "B",
+    "A",
+    "COM",
+    "C4",
+    "ISC",
+    "PIE",
+    "PYI",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SIM",
+    "TID",
+    "ARG",
+    "PTH",
+    "PGH",
+    "TRY",
+    "RUF",
+]

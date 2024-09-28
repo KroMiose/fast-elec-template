@@ -1,0 +1,8 @@
+# backend
+**/.venv
+**/__pycache__
+**/dist
+
+# frontend
+**/node_modules
+**/build

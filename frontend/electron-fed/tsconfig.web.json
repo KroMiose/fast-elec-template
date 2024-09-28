@@ -1,0 +1,17 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.web.json",
+  "include": [
+    "src/renderer/src/env.d.ts",
+    "src/renderer/src/**/*", // 这行已经包含了 router 文件夹
+    "src/renderer/src/**/*.vue",
+    "src/preload/*.d.ts",
+    "src/renderer/router/*.ts" //  或者更精确地指定: "src/renderer/router/index.ts"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@renderer/*": ["src/renderer/src/*"]
+    }
+  }
+}
