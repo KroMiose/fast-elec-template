@@ -1,7 +1,7 @@
 class Config:
     APP_HOST = "0.0.0.0"
     APP_PORT = 8866
-    APP_RELOAD = True
+    APP_RELOAD = False
     UVICORN_LOG_LEVEL = "info"
     APP_LOG_LEVEL = "info"
 

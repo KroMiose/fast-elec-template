@@ -53,7 +53,7 @@ def start():
     import uvicorn
 
     uvicorn.run(
-        "src.fastapi_bed.app:app",
+        "fastapi_bed.app:app",
         host=config.APP_HOST,
         port=config.APP_PORT,
         log_level=config.UVICORN_LOG_LEVEL.lower(),
